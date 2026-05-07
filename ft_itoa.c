@@ -6,7 +6,7 @@
 /*   By: mruiz-ra <mruiz-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 18:08:11 by mruiz-ra          #+#    #+#             */
-/*   Updated: 2026/04/22 21:54:08 by mruiz-ra         ###   ########.fr       */
+/*   Updated: 2026/05/07 21:11:09 by mruiz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_num_len(long n)
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		len++;
@@ -70,7 +72,7 @@ char	*ft_itoa(int n)
 	len = ft_num_len(numero);
 	if (numero == 0)
 		return (ft_is_it_zero());
-	numerochar = malloc(12);
+	numerochar = malloc(len + 1);
 	if (numerochar == NULL)
 		return (NULL);
 	x = len - 1;

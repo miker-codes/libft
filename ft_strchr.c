@@ -6,7 +6,7 @@
 /*   By: mruiz-ra <mruiz-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:15:50 by mruiz-ra          #+#    #+#             */
-/*   Updated: 2026/04/21 11:35:33 by mruiz-ra         ###   ########.fr       */
+/*   Updated: 2026/05/07 20:50:03 by mruiz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	contador = 0;
 	while (s[contador] != '\0')
 	{
-		if (s[contador] == c)
+		if (s[contador] == (char)c)
 			return ((char *)&s[contador]);
 		contador++;
 	}

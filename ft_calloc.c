@@ -6,7 +6,7 @@
 /*   By: mruiz-ra <mruiz-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:08:43 by mruiz-ra          #+#    #+#             */
-/*   Updated: 2026/04/21 19:24:49 by mruiz-ra         ###   ########.fr       */
+/*   Updated: 2026/05/07 21:08:05 by mruiz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_calloc(size_t n, size_t size)
 
 	if (n == 0 || size == 0)
 		return (malloc(0));
+	if (size != 0 && n > SIZE_MAX / size)
+		return (NULL);
 	totalsize = n * size;
 	p = malloc(totalsize);
 	if (p == NULL)

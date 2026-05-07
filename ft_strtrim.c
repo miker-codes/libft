@@ -6,7 +6,7 @@
 /*   By: mruiz-ra <mruiz-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 15:51:45 by mruiz-ra          #+#    #+#             */
-/*   Updated: 2026/04/22 16:43:10 by mruiz-ra         ###   ########.fr       */
+/*   Updated: 2026/05/07 21:21:16 by mruiz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_is_in_set(char c, char const *set)
 static char	*ft_copy_trim(const char *s, size_t start, size_t end)
 {
 	size_t			contador;
-	unsigned char	*dest;
+	char			*dest;
 
 	contador = 0;
 	if (end < start)
@@ -55,19 +55,16 @@ static char	*ft_copy_trim(const char *s, size_t start, size_t end)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned char	*dest;
-	size_t			contador;
 	size_t			start;
 	size_t			end;
 
-	contador = 0;
 	start = 0;
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));
 	end = ft_strlen(s1) - 1;
-	while (ft_is_in_set(s1[start], set))
+	while (s1[start] && ft_is_in_set(s1[start], set))
 		start++;
-	while (ft_is_in_set(s1[end], set))
+	while (start <= end && ft_is_in_set(s1[end], set))
 		end--;
 	return (ft_copy_trim(s1, start, end));
 }

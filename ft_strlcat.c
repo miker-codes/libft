@@ -6,7 +6,7 @@
 /*   By: mruiz-ra <mruiz-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:42:44 by mruiz-ra          #+#    #+#             */
-/*   Updated: 2026/04/21 11:06:00 by mruiz-ra         ###   ########.fr       */
+/*   Updated: 2026/05/07 20:54:54 by mruiz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	if (dsize == 0)
 		return (ft_strlen(src));
 	dst_init_len = ft_strlen(dst);
+	if (dsize <= dst_init_len)
+		return (dsize + ft_strlen(src));
 	contadorsrc = 0;
 	contador = dst_init_len;
 	while ((contador < dsize - 1) && src[contadorsrc] != '\0')
