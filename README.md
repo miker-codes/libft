@@ -21,6 +21,7 @@ El objetivo del proyecto no es solo "tener" estas funciones, sino entender cómo
 Clona el repo y entra en el directorio:
 
 ```bash
+git clone https://github.com/miker-codes/libft.git
 cd libft
 ```
 
