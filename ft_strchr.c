@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[contador]);
 		contador++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)&s[contador]);
 	return (NULL);
 }
